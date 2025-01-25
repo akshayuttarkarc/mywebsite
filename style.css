@@ -46,8 +46,32 @@ header p {
     font-size: 1rem;
 }
 
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
 .section {
     padding: 2rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .container {
@@ -140,4 +164,52 @@ footer {
 
 .social-links a:hover {
     color: #3498db;
+}
+
+.collapsible {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapsible:hover {
+    background-color: #2980b9;
+}
+
+.collapsible i {
+    transition: transform 0.3s;
+}
+
+.content {
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+.content ul {
+    padding-left: 2rem;
+}
+
+.content li {
+    margin-bottom: 1rem;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }
